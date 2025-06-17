@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tommy's Newspaper Delivery Adventure</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 30px 0;
+      background: #2c3e50;
+      color: white;
+      margin-bottom: 30px;
+      border-radius: 15px;
+    }
+    
+    .dark-mode header {
+      background: #1a1a2e;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    
+    .controls {
+      background: #ecf0f1;
+      padding: 15px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: background 0.3s;
+    }
+    
+    .dark-mode .controls {
+      background: #2d2d2d;
+    }
+    
+    .font-controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-family: Georgia, serif;
+      transition: background 0.3s;
+    }
+    
+    button:hover {
+      background: #2980b9;
+    }
+    
+    .dark-mode button {
+      background: #3a5a78;
+    }
+    
+    .dark-mode button:hover {
+      background: #4a6b8a;
+    }
+    
+    #darkModeToggle {
+      background: #555;
+    }
+    
+    .dark-mode #darkModeToggle {
+      background: #3498db;
+    }
+    
+    .vstf-text {
+      white-space: pre-line;
+      line-height: 1.7;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    .dark-mode .vstf-text {
+      background: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    
+    .indent-0 { margin-left: 0em; }
+    .indent-1 { margin-left: 2em; }
+    .indent-2 { margin-left: 4em; }
+    .indent-3 { margin-left: 6em; }
+    .verb { color: darkblue; font-weight: bold; }
+    
+    .dark-mode .verb {
+      color: #7aa6da;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+    }
+    
+    .dark-mode footer {
+      color: #a0a0a0;
+    }
+    
+    @media (max-width: 600px) {
+      .controls {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .font-controls {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tommy's Newspaper Delivery Adventure</h1>
+      <p>A mysterious morning encounter</p>
+    </header>
+    
+    <div class="controls">
+      <div class="font-controls">
+        <span>Font Size:</span>
+        <button id="decreaseFont">-</button>
+        <button id="resetFont">Reset</button>
+        <button id="increaseFont">+</button>
+      </div>
+      <button id="darkModeToggle">Dark Mode</button>
+    </div>
+    
+    <div class="vstf-text" id="storyText">
+<span class="indent-0">Tommy <span class="verb">delivers</span> newspapers.</span>
+<span class="indent-1">Every morning,</span>
+<span class="indent-2">he <span class="verb">gets up</span> at 4:00 am.</span>
+<span class="indent-2">He <span class="verb">rides</span> his motor scooter to the newspaper centre.</span>
+<span class="indent-2">He <span class="verb">collects</span> 100 newspapers.</span>
+<span class="indent-2">Then he <span class="verb">rides</span> around the neighbourhood.</span>
+<span class="indent-2">He <span class="verb">puts</span> the newspapers into the letterboxes of the people on his list.</span>
+
+<span class="indent-1">It <span class="verb">is</span> dark, and often it <span class="verb">is</span> cold.</span>
+<span class="indent-1">But Tommy <span class="verb">likes</span> it.</span>
+<span class="indent-2">There <span class="verb">are</span> no people on the streets so early.</span>
+<span class="indent-2">Everyone <span class="verb">is</span> still sleeping.</span>
+<span class="indent-1">Tommy <span class="verb">likes</span> to think about the people in the houses.</span>
+<span class="indent-2">He <span class="verb">has never seen</span> them.</span>
+<span class="indent-2">But he <span class="verb">likes</span> to <span class="verb">make up</span> stories about them.</span>
+
+<span class="indent-1">Some houses <span class="verb">are</span> very big.</span>
+<span class="indent-2">They <span class="verb">have</span> expensive cars in their garages.</span>
+<span class="indent-1">Some houses <span class="verb">are</span> very small.</span>
+<span class="indent-1">Some people <span class="verb">have</span> beautiful gardens.</span>
+<span class="indent-1">Some people <span class="verb">have</span> children's toys outside.</span>
+<span class="indent-1">Tommy <span class="verb">has</span> ideas about the people in almost every house.</span>
+
+<span class="indent-1">This house <span class="verb">belongs</span> to a bank manager,</span>
+<span class="indent-2">he <span class="verb">is</span> very fat, <span class="verb">thinks</span> Tommy.</span>
+
+<span class="indent-1">The children in this house <span class="verb">are</span> in high school.</span>
+<span class="indent-1">The woman in this house <span class="verb">is</span> lazy.</span>
+<span class="indent-2">She <span class="verb">doesn't take</span> her garbage out</span>
+<span class="indent-2">and she <span class="verb">doesn't tidy</span> her garden.</span>
+
+<span class="indent-1">There <span class="verb">is</span> just one house that Tommy <span class="verb">doesn't understand</span>.</span>
+<span class="indent-2">It <span class="verb">is</span> small and old.</span>
+<span class="indent-2">It <span class="verb">has</span> expensive curtains and a beautiful garden.</span>
+<span class="indent-2">There <span class="verb">is</span> never a car, or a bicycle or toys outside.</span>
+
+<span class="indent-1">Who <span class="verb">lives</span> there? <span class="verb">wonders</span> Tommy.</span>
+<span class="indent-2">Is it a man or a woman?</span>
+<span class="indent-2">Are they young? Are they old?</span>
+<span class="indent-2">It's a mystery.</span>
+
+<span class="indent-1">Tommy often <span class="verb">thinks</span> about the mystery house.</span>
+<span class="indent-2">Then one morning he <span class="verb">meets</span> the owner of the house.</span>
+<span class="indent-2">It <span class="verb">happens</span> like this.</span>
+
+<span class="indent-1">It <span class="verb">is</span> winter and it <span class="verb">is</span> snowing.</span>
+<span class="indent-2">The snow <span class="verb">started</span> just as Tommy <span class="verb">got up</span>.</span>
+<span class="indent-2">The first house on Tommy's list <span class="verb">is</span> the mystery house.</span>
+
+<span class="indent-1">When Tommy <span class="verb">stops</span> his motor scooter</span>
+<span class="indent-2">to <span class="verb">put</span> the newspaper in the letterbox,</span>
+<span class="indent-2">he <span class="verb">sees</span> that the door of the house <span class="verb">is</span> open.</span>
+<span class="indent-2">Then he <span class="verb">sees</span> footprints.</span>
+<span class="indent-3">They <span class="verb">go</span> from the front door towards the road,</span>
+<span class="indent-3">then <span class="verb">go</span> towards the garden.</span>
+
+<span class="indent-1">Tommy <span class="verb">is puzzled</span>.</span>
+<span class="indent-2">He <span class="verb">puts</span> the newspaper in the letterbox</span>
+<span class="indent-2">and then <span class="verb">goes</span> to look at the footprints.</span>
+
+<span class="indent-1">"Someone <span class="verb">got up</span> early this morning," he <span class="verb">thinks</span>.</span>
+<span class="indent-2">"It only <span class="verb">started</span> snowing at 4:00 am."</span>
+
+<span class="indent-1">The footprints <span class="verb">are</span> very small.</span>
+<span class="indent-2">They <span class="verb">look</span> like a child's footprints.</span>
+<span class="indent-1">But Tommy <span class="verb">doesn't think</span> a child <span class="verb">lives</span> in the house.</span>
+
+<span class="indent-1">The other strange thing <span class="verb">is</span> that the person <span class="verb">was not wearing</span> shoes.</span>
+<span class="indent-2">They <span class="verb">are</span> footprints of bare feet.</span>
+
+<span class="indent-1">Tommy <span class="verb">is worried</span>.</span>
+<span class="indent-2">He <span class="verb">thinks</span> there <span class="verb">is</span> something wrong.</span>
+<span class="indent-2">He <span class="verb">follows</span> the footprints.</span>
+
+<span class="indent-1">In the garden,</span>
+<span class="indent-2">he <span class="verb">sees</span> someone lying on the ground.</span>
+<span class="indent-2">He <span class="verb">runs</span> towards the person.</span>
+
+<span class="indent-1">It <span class="verb">is</span> a very small, very old woman.</span>
+<span class="indent-2">She <span class="verb">is wearing</span> a nightgown.</span>
+<span class="indent-2">There <span class="verb">is</span> blood on the back of her head.</span>
+
+<span class="indent-1">Tommy <span class="verb">thinks</span> she <span class="verb">is</span> dead,</span>
+<span class="indent-2">but he <span class="verb">kneels down</span> and <span class="verb">touches</span> her.</span>
+<span class="indent-2">"Are you OK?"</span>
+
+<span class="indent-1">She <span class="verb">isn't</span> dead.</span>
+<span class="indent-2">She <span class="verb">says</span> something.</span>
+<span class="indent-2">Tommy <span class="verb">has to put</span> his head next to her face to hear.</span>
+
+<span class="indent-1">"The house. Someone inside. <span class="verb">Hit</span> me. I <span class="verb">ran away</span>. <span class="verb">Frightened</span>."</span>
+
+<span class="indent-1">Tommy <span class="verb">looks</span> at the house.</span>
+<span class="indent-2">He <span class="verb">takes</span> his mobile phone</span>
+<span class="indent-2">and <span class="verb">calls</span> the police and an ambulance.</span>
+
+<span class="indent-1">He <span class="verb">runs</span> to his motor scooter.</span>
+<span class="indent-2">Someone <span class="verb">is coming</span> out of the house.</span>
+<span class="indent-2">He <span class="verb">has</span> a gun.</span>
+
+<span class="indent-1">Tommy <span class="verb">throws</span> his bag of newspapers at the gunman.</span>
+<span class="indent-2">The man <span class="verb">shoots</span>.</span>
+<span class="indent-2">But the bullet <span class="verb">hits</span> the bag.</span>
+
+<span class="indent-1">The man <span class="verb">is running</span> towards Tommy</span>
+<span class="indent-2">but he <span class="verb">falls</span> over the bag.</span>
+<span class="indent-2">Tommy <span class="verb">jumps</span> on the man</span>
+<span class="indent-2">and <span class="verb">sits</span> on his head.</span>
+
+<span class="indent-1">Then the police and ambulance <span class="verb">arrive</span>.</span>
+<span class="indent-2">The old woman <span class="verb">is</span> very ill</span>
+<span class="indent-2">but the ambulance people <span class="verb">think</span> she <span class="verb">will be</span> OK.</span>
+
+<span class="indent-1">The police <span class="verb">take</span> the man with the gun away.</span>
+
+<span class="indent-1">Tommy's newspapers <span class="verb">are</span> wet from the snow.</span>
+<span class="indent-2">Some of them <span class="verb">have</span> holes in them from the bullet.</span>
+<span class="indent-1">Tommy <span class="verb">has to go</span> back to the newspaper centre</span>
+<span class="indent-2">and <span class="verb">get</span> more newspapers.</span>
+<span class="indent-2">He <span class="verb">must finish</span> his delivery.</span>
+
+<span class="indent-1">The newspapers <span class="verb">will be</span> late today.</span>
+<span class="indent-2">Tommy <span class="verb">hopes</span> the readers <span class="verb">don't mind</span>.</span>
+
+<span class="indent-1">He <span class="verb">is</span> wet and cold</span>
+<span class="indent-2">but he <span class="verb">is</span> happy.</span>
+<span class="indent-2">The policemen <span class="verb">told</span> him he <span class="verb">was</span> a hero.</span>
+<span class="indent-2">That <span class="verb">makes</span> him feel good.</span>
+<span class="indent-2">But he also <span class="verb">feels</span> good</span>
+<span class="indent-3">because he <span class="verb">knows</span> who <span class="verb">lives</span> in the mystery house.</span>
+    </div>
+    
+    <!-- <footer>
+      <p></p>
+    </footer> -->
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const storyText = document.getElementById('storyText');
+      const decreaseBtn = document.getElementById('decreaseFont');
+      const resetBtn = document.getElementById('resetFont');
+      const increaseBtn = document.getElementById('increaseFont');
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const body = document.body;
+      
+      let currentFontSize = 1.1; // rem
+      const defaultFontSize = 1.1;
+      
+      // Check for saved dark mode preference
+      const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+      if (savedDarkMode) {
+        body.classList.add('dark-mode');
+        darkModeToggle.textContent = 'Light Mode';
+      }
+      
+      // Apply initial font size
+      updateFontSize();
+      
+      // Font size controls
+      decreaseBtn.addEventListener('click', function() {
+        if (currentFontSize > 0.8) {
+          currentFontSize -= 0.1;
+          updateFontSize();
+        }
+      });
+      
+      resetBtn.addEventListener('click', function() {
+        currentFontSize = defaultFontSize;
+        updateFontSize();
+      });
+      
+      increaseBtn.addEventListener('click', function() {
+        if (currentFontSize < 2.0) {
+          currentFontSize += 0.1;
+          updateFontSize();
+        }
+      });
+      
+      // Dark mode toggle
+      darkModeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        const isDarkMode = body.classList.contains('dark-mode');
+        darkModeToggle.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+        
+        // Save preference to localStorage
+        localStorage.setItem('darkMode', isDarkMode);
+      });
+      
+      function updateFontSize() {
+        storyText.style.fontSize = currentFontSize + 'rem';
+        
+        // Update button states
+        decreaseBtn.disabled = currentFontSize <= 0.8;
+        increaseBtn.disabled = currentFontSize >= 2.0;
+      }
+    });
+  </script>
+</body>
+</html>
